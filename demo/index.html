@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+	#master {
+		position: relative;
+		width: 320px;
+		height: 320px;
+		border: 1px solid black;
+	}
+
+	.circle {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.red {
+		border: 1px solid red;
+		border-radius: 100px;
+	}
+
+	#c {
+		margin: 160px;
+		width: 0px;
+		height: 0px;
+		border-radius: 0px;
+		border: 0px solid green;
+				-webkit-animation: move_eye 4s linear 0s 1 normal;
+	}
+
+	@-webkit-keyframes move_eye {
+					from {
+		margin: 160px;
+		width: 0px;
+		height: 0px;
+		border-radius: 0px;
+		border: 0px solid green;
+					}
+
+					to {
+		margin: 0px;
+		width: 300px;
+		height: 300px;
+		border-radius: 300px;
+		border: 10px solid white;
+					}  }
+
+</style>
+
+</head>
+<body>
+	<div id="master">
+		<div class="circle red"></div>
+		<div id="c" class="circle red smaller"></div>
+	</div>
+
+	<script>
+		setInterval( function() {
+						var d = document.getElementById("c");
+						d.style.webkitAnimationName = "none";
+						setTimeout( function() {
+										d.style.webkitAnimationName = "move_eye";
+										}, 0 );
+						}, 5000 );
+	</script>
+</body>
+</html>
