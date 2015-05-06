@@ -32,6 +32,15 @@
 		border: 0px solid green;
 				-webkit-animation: move_eye 4s linear 0s 1 normal;
 	}
+	
+	#d {
+		margin: 160px;
+		width: 0px;
+		height: 0px;
+		border-radius: 0px;
+		border: 0px solid green;
+				-webkit-animation: move_eye 4s linear 0s 1 normal;
+	}
 
 	@-webkit-keyframes move_eye {
 					from {
@@ -47,26 +56,41 @@
 		width: 300px;
 		height: 300px;
 		border-radius: 300px;
-		border: 10px solid white;
+		border: 20px solid white;
 					}  }
 
 </style>
 
 </head>
 <body>
-	<div id="master">
+  <!--
+  <div id="master">
 		<div class="circle red"></div>
 		<div id="c" class="circle red smaller"></div>
+    <div id="d" class="circle red smaller"></div>
+	</div>
+  -->
+  <div id="master">
 	</div>
 
-	<script>
-		setInterval( function() {
-						var d = document.getElementById("c");
-						d.style.webkitAnimationName = "none";
-						setTimeout( function() {
-										d.style.webkitAnimationName = "move_eye";
-										}, 0 );
-						}, 5000 );
+  <script src="cssRules.js"></script>
+  <script src="soundGauge.js"></script>
+  <script>
+
+    var sg = new SoundGauge( { p: 0, o: 'i' } );
+//		setInterval( function() {
+//      var d = document.getElementById("c");
+//      d.style.webkitAnimationName = "none";
+//      setTimeout( function() {
+//        d.style.webkitAnimationName = "move_eye";
+//      }, 0 );
+//    }, 5000 );
+//    
+//  addStylesheetRules([
+//    ['#master', // Also accepts a second argument as an array of arrays instead
+//      ['background-color', 'pink']
+//    ] 
+//  ]);
 	</script>
 </body>
 </html>
